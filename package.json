@@ -16,6 +16,7 @@
     "url": "https://github.com/Pon20995/aqa_testing/issues"
   },
   "homepage": "https://github.com/Pon20995/aqa_testing#readme",
+  "type": "module",
   "dependencies": {
     "jest": "^29.7.0"
   }
