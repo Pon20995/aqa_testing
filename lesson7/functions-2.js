@@ -96,7 +96,7 @@ const person22 = { name: "Koala" };
 greet3.call(person22);
 
 console.log("10---------------------------");
-//With the apply() method, you can write a method that can be used on different objects.
+//With the apply() method, you can write a method that can be used on different objects. The apply() method takes arguments as an array.
 function greet2(timesOfDay, weather) {
   console.log(`Good ${timesOfDay}, ${this.name}! It's ${weather} today.`);
 }
@@ -148,3 +148,16 @@ function factorial(n) {
 }
 const factorialRes = factorial(5);
 console.log(factorialRes);
+
+console.log("15---------------------------");
+function* GenerateData() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const generatorUsage = GenerateData();
+console.log(generatorUsage.next());
+console.log(generatorUsage.next());
+console.log(generatorUsage.next());
+console.log(generatorUsage.next());
