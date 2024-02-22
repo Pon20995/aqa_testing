@@ -53,7 +53,7 @@ for (const fruit of fruits) {
   console.log(fruit);
 }
 console.log("7---------------------------");
-const passwords = ["wsef", "esddas", "afasf", 1111, 44];
+const passwords = ["wsef", "esddas", "afasf", 1111, 44, 66];
 
 console.log("8---------------------------");
 let a = 10;
