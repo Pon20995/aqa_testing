@@ -9,7 +9,7 @@ console.log(valueMyNumber / valueTxt);
 console.log(isNaN(valueMyNumber));
 
 const str1 = 'abc';
-const str2 = "abc";
+const str2 = 'abc';
 const str3 = `abc ${valueMyNumber} result of ${3 + 1}`;
 console.log(str3);
 
@@ -22,16 +22,16 @@ let myNumber343;
 
 let blabla;
 let isEmpty = null;
-isEmpty = 'element'
+isEmpty = 'element';
 
-const mySymbol = Symbol(); 
+const mySymbol = Symbol();
 const identificator1 = Symbol('idMy');
-console.log(identificator1.toString())
+console.log(identificator1.toString());
 
 const bigInt = 29292929292929n;
 const bigInt2 = BigInt(203049492);
 
-console.log(typeof (isEmpty));
+console.log(typeof isEmpty);
 
 let str111 = new String('New');
 const str222 = new Number(222);

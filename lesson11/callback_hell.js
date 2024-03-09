@@ -1,18 +1,18 @@
 const menu = {
   americano: [
-    { item: "🍔", time: 3000 },
-    { item: "🍟", time: 1500 },
-    { item: "🥤", time: 500 },
+    { item: '🍔', time: 3000 },
+    { item: '🍟', time: 1500 },
+    { item: '🥤', time: 500 },
   ],
   italiano: [
-    { item: "🍕", time: 1500 },
-    { item: "🥗", time: 1500 },
-    { item: "🍷", time: 500 },
+    { item: '🍕', time: 1500 },
+    { item: '🥗', time: 1500 },
+    { item: '🍷', time: 500 },
   ],
   breakfast: [
-    { item: "🥪", time: 1000 },
-    { item: "🍳", time: 2500 },
-    { item: "☕", time: 1000 },
+    { item: '🥪', time: 1000 },
+    { item: '🍳', time: 2500 },
+    { item: '☕', time: 1000 },
   ],
 };
 const order = (dishes, onComplete) => {
@@ -31,8 +31,8 @@ const order = (dishes, onComplete) => {
 
     setTimeout(() => {
       const dish = condition
-        ? { status: "fulfilled", value: item }
-        : { status: "rejected", reason: `${item} failed` };
+        ? { status: 'fulfilled', value: item }
+        : { status: 'rejected', reason: `${item} failed` };
       onDishComplete(dish, index);
     }, time);
   };

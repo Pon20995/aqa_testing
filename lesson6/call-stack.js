@@ -1,9 +1,9 @@
 function hi() {
-  console.log("hi");
+  console.log('hi');
   by();
 }
 
 function by() {
-  console.log("by");
+  console.log('by');
 }
 hi();

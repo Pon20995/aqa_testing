@@ -1,11 +1,11 @@
-console.log("-------------procedural programming-------------");
+console.log('-------------procedural programming-------------');
 function calculateSum(a, b) {
   return a + b;
 }
 const resultOfSum = calculateSum(5, 5);
 console.log(resultOfSum);
 
-console.log("-------------functional programming-------------");
+console.log('-------------functional programming-------------');
 const calculateSum2 = (a, b) => a + b;
 console.log(calculateSum2(5, 3));
 
@@ -20,7 +20,7 @@ console.log(filterEven(numbers));
 
 console.log(calculateSum3(filterEven(triple(numbers))));
 
-console.log("-----------------------OOP----------------------");
+console.log('-----------------------OOP----------------------');
 class MyClass {
   constructor() {}
   method() {}
@@ -29,7 +29,7 @@ class MyClass {
 
 class User {
   #timeout = 3000;
-  static country = "UA";
+  static country = 'UA';
   constructor(name, age, url) {
     this.name = name;
     this.age = age;
@@ -47,7 +47,7 @@ class User {
   }
   set showUrl(value) {
     if (value.length <= 10) {
-      console.log("url not approved");
+      console.log('url not approved');
       return;
     }
     this._url = value; //Захищений метод
@@ -65,12 +65,12 @@ class User {
   }
 }
 
-let myUser = new User("Den");
+let myUser = new User('Den');
 myUser.sayHi();
 myUser.age = 45;
-myUser._url = "new";
+myUser._url = 'new';
 console.log(myUser);
-console.log("Timeout is: " + myUser.getTimeout());
+console.log('Timeout is: ' + myUser.getTimeout());
 console.log(User.walk(50));
 console.log(User.country);
 
@@ -79,14 +79,14 @@ class ApiController extends User {
     console.log(`${this.age}, here`);
   }
   sendRequest() {
-    super.sendRequest("http"); //Посилання на батьківський клас
-    console.log("The field with http param correct");
+    super.sendRequest('http'); //Посилання на батьківський клас
+    console.log('The field with http param correct');
   }
 }
 
-const newApiCall = new ApiController("axios child", 3000, "my-url");
+const newApiCall = new ApiController('axios child', 3000, 'my-url');
 newApiCall.sendPostRequest();
 
-const objectBasedOnUser = new User("axios child", 3000, "my-url-url-url-url");
-newApiCall.showUrl = "my";
+const objectBasedOnUser = new User('axios child', 3000, 'my-url-url-url-url');
+newApiCall.showUrl = 'my';
 console.log(newApiCall.showUrl);

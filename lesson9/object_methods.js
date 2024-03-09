@@ -1,40 +1,40 @@
-console.log("1---------------------------");
+console.log('1---------------------------');
 let object1 = {
-  name: "John",
-  lastName: "Dow",
+  name: 'John',
+  lastName: 'Dow',
   age: 1000,
-  address: "R. Francisco sa Carneiro 18",
+  address: 'R. Francisco sa Carneiro 18',
 };
 console.log(object1);
 
-console.log("2---------------------------");
+console.log('2---------------------------');
 let anotherObject1 = object1;
 console.log(anotherObject1.age);
 
 anotherObject1.age = 10;
 console.log(anotherObject1.age);
 
-console.log("3---------------------------");
+console.log('3---------------------------');
 const object2 = {};
-object2.name = "Hugh";
+object2.name = 'Hugh';
 console.log(object2);
 
-console.log("4---------------------------");
+console.log('4---------------------------');
 const object3 = {
-  name: "Till",
+  name: 'Till',
   phone: {
     mobile: 12345,
     home: 34567,
-    "cord phone": 56789,
+    'cord phone': 56789,
   },
 };
 console.log(object3);
 console.log(object3.phone.home);
-console.log(object3.phone["cord phone"]);
-console.log(object3["phone"]["mobile"]);
+console.log(object3.phone['cord phone']);
+console.log(object3['phone']['mobile']);
 
-console.log("5---------------------------");
-const nameKolo = "Kolo";
+console.log('5---------------------------');
+const nameKolo = 'Kolo';
 const age20 = 20;
 
 const object4 = {
@@ -43,16 +43,16 @@ const object4 = {
 };
 console.log(object4);
 
-console.log("6---------------------------");
+console.log('6---------------------------');
 //деструктуризація
-const selectorHeader = "h1.main.pointer";
-const textInHeader = "Hello user";
+const selectorHeader = 'h1.main.pointer';
+const textInHeader = 'Hello user';
 
 const combinedSelectors = { selectorHeader, textInHeader };
 console.log(combinedSelectors.selectorHeader);
 
-combinedSelectors.footerElement = "link";
-combinedSelectors.linkToHomePage = "link to home page";
+combinedSelectors.footerElement = 'link';
+combinedSelectors.linkToHomePage = 'link to home page';
 console.log(combinedSelectors);
 
 const {
@@ -62,21 +62,21 @@ const {
 } = combinedSelectors;
 console.log(newSelHeader);
 
-console.log("7---------------------------");
-const prop = "age";
+console.log('7---------------------------');
+const prop = 'age';
 const selectorForFooter = {
   [prop]: 3000,
 };
 const ageFromObject = selectorForFooter.age;
 console.log(ageFromObject);
 
-console.log("8---------------------------");
+console.log('8---------------------------');
 //this
 const objectValuesPointPlus = {
   name: nameKolo,
   age: age20,
   sayHi: function () {
-    console.log("Hello from method, not function");
+    console.log('Hello from method, not function');
   },
   showName: function () {
     console.log(`My name is ${this.name}`);
@@ -86,82 +86,82 @@ const objectValuesPointPlus = {
 objectValuesPointPlus.sayHi();
 objectValuesPointPlus.showName();
 
-console.log("9---------------------------");
+console.log('9---------------------------');
 // ? optional operator for unexisting data from objects
 const resultOfFunction = objectValuesPointPlus.showAge?.();
 console.log(resultOfFunction);
 
-console.log("10---------------------------");
+console.log('10---------------------------');
 // if no value ?? set default value
 const genderFromObj1 = object1.gender;
-const genderFromObj2 = object1.gender ?? "default value";
+const genderFromObj2 = object1.gender ?? 'default value';
 console.log(genderFromObj1);
 console.log(genderFromObj2);
 
-console.log("11---------------------------");
+console.log('11---------------------------');
 for (const valueKey in objectValuesPointPlus) {
   //   console.log(valueKey);
-  console.log(valueKey + ": " + objectValuesPointPlus[valueKey]);
+  console.log(valueKey + ': ' + objectValuesPointPlus[valueKey]);
 }
 
-console.log("12---------------------------");
+console.log('12---------------------------');
 const newObjPlus = Object.create(objectValuesPointPlus);
 newObjPlus.legs = 2;
 
-console.log(objectValuesPointPlus.hasOwnProperty("legs"));
-console.log(newObjPlus.hasOwnProperty("legs"));
+console.log(objectValuesPointPlus.hasOwnProperty('legs'));
+console.log(newObjPlus.hasOwnProperty('legs'));
 
 const objBasedArrays = [
-  { name: "John", lastName: "Dow" },
-  { name: "John", lastName: "Dow" },
-  { name: "John", lastName: "Dow" },
+  { name: 'John', lastName: 'Dow' },
+  { name: 'John', lastName: 'Dow' },
+  { name: 'John', lastName: 'Dow' },
 ];
 
 objBasedArrays.forEach(function (objBasedArrays) {
   if (!objBasedArrays.legs) {
-    console.log("no property");
+    console.log('no property');
   }
 });
 
-console.log("13---------------------------");
+console.log('13---------------------------');
 const keys = Object.keys(objectValuesPointPlus);
 const valuesO = Object.values(objectValuesPointPlus);
-console.log(keys + ":\n" + valuesO);
+console.log(keys + ':\n' + valuesO);
 
-console.log("14---------------------------");
+console.log('14---------------------------');
 // деструктуризація масивів
-const elementsArray = ["input", "button", "button.send"];
+const elementsArray = ['input', 'button', 'button.send'];
 const [firstELement, secondElement, ThirdELement] = elementsArray;
 console.log(firstELement);
 
-console.log("15---------------------------");
+console.log('15---------------------------');
 //...  copy of object
 const copiedSelectors = { ...combinedSelectors };
-copiedSelectors.selectorHeader = "NNN";
+copiedSelectors.selectorHeader = 'NNN';
 console.log(copiedSelectors.selectorHeader);
 console.log(combinedSelectors.selectorHeader);
 
-console.log("16---------------------------");
+console.log('16---------------------------');
 //assign method
 const copiedSelectors2 = Object.assign({}, combinedSelectors);
-copiedSelectors2.selectorHeader = "AAA";
+copiedSelectors2.selectorHeader = 'AAA';
 console.log(copiedSelectors2.selectorHeader);
 console.log(combinedSelectors.selectorHeader);
 
-console.log("17---------------------------");
+console.log('17---------------------------');
 function clickAndVerifyDataInFooter(copiedSelectors) {
-  console.log("Click on the element " + copiedSelectors.footerElement);
+  console.log('Click on the element ' + copiedSelectors.footerElement);
 }
 
 clickAndVerifyDataInFooter(copiedSelectors);
 
-console.log("18---------------------------");
+console.log('18---------------------------');
 //map
 
 const simpleMap = new Map();
-simpleMap.set("keyNumber1", "valueNumber1");
-console.log(simpleMap.get("keyNumber1"));
-console.log(simpleMap.has("keyNumber1"));
-simpleMap.delete("keyNotExisted");
+simpleMap.set('keyNumber1', 'valueNumber1');
+console.log(simpleMap.get('keyNumber1'));
+console.log(simpleMap.has('keyNumber1'));
+simpleMap.delete('keyNotExisted');
 simpleMap.clear();
-console.log(simpleMap.get("keyNumber1"));
+console.log(simpleMap.get('keyNumber1'));
