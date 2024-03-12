@@ -6,6 +6,7 @@ console.log(Infinity);
 console.log(valueMyNumber);
 console.log(valueMyNumber2);
 console.log(valueMyNumber / valueTxt);
+// eslint-disable-next-line no-restricted-globals
 console.log(isNaN(valueMyNumber));
 
 const str1 = 'abc';
@@ -24,6 +25,7 @@ let blabla;
 let isEmpty = null;
 isEmpty = 'element';
 
+// eslint-disable-next-line symbol-description
 const mySymbol = Symbol();
 const identificator1 = Symbol('idMy');
 console.log(identificator1.toString());
@@ -33,6 +35,9 @@ const bigInt2 = BigInt(203049492);
 
 console.log(typeof isEmpty);
 
-let str111 = new String('New');
+// eslint-disable-next-line no-new-wrappers
+const str111 = new String('New');
+// eslint-disable-next-line no-new-wrappers
 const str222 = new Number(222);
+// eslint-disable-next-line no-new-wrappers
 const str333 = new Boolean(true);

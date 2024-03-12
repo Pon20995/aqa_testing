@@ -8,6 +8,7 @@ async function getSingleUserData() {
   // console.log(response); //багато непотрібного добра
 }
 
+let nonUsed;
 getSingleUserData();
 
 //JSON =>

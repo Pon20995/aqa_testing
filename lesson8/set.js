@@ -1,4 +1,4 @@
-//Set;
+// Set;
 const setNumberOne = new Set([1, 1, 1, 1, 2, 2, 3, 4, 4, 5]);
 const emptySet = new Set();
 console.log(setNumberOne);

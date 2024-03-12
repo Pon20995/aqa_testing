@@ -34,7 +34,7 @@ clearTimeout(timeoutId2);
 // } else {
 //     reject(reason); // failure
 // } } );
-let myOwnPromise = new Promise(function (resolve, reject) {
+const myOwnPromise = new Promise((resolve, reject) => {
   resolve('result of function based on promise- good');
   reject(new Error('bad result of promise'));
 });
@@ -44,7 +44,7 @@ myOwnPromise.then(
   (error) => console.log(error),
 );
 
-let myOwnPromise2 = new Promise(function (resolve, reject) {
+const myOwnPromise2 = new Promise((resolve, reject) => {
   setTimeout(() => resolve('Good result'), 1000);
 });
 
@@ -53,7 +53,7 @@ myOwnPromise2.then(
   (error) => console.log(error),
 );
 
-let myOwnPromise3 = new Promise(function (resolve, reject) {
+const myOwnPromise3 = new Promise((resolve, reject) => {
   setTimeout(() => reject('Errorka'), 1000);
 });
 
