@@ -40,4 +40,5 @@ const accessByAge = ageCustomer2 >= isAdult
   ? console.log('4. good ternary')
   : console.log('4. bad ternary');
 
+// eslint-disable-next-line no-nested-ternary
 const accessByAge1 = ageCustomer <= isAdult ? console.log('5. Not in age') : ageCustomer <= 50 ? console.log('5. in age up to 50') : console.log('5. over age');

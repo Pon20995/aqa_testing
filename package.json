@@ -11,8 +11,8 @@
     "pre-commit": "npm run lint"
   },
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "lint_one_file",
-    "lint_one_file": "npx eslint lesson12/methods.js --fix"
+    "prepare": "lint_one_file"
+    
   },
   "repository": {
     "type": "git",

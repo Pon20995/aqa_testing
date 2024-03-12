@@ -2,6 +2,7 @@
 console.log('1---------------------------');
 for (let index = 0; index <= 5; index++) {
   if (index === 3) {
+    // eslint-disable-next-line no-continue
     continue;
   }
   console.log(index);
@@ -38,10 +39,12 @@ myCar2.engineSound();
 console.log('4---------------------------');
 
 // for in
+// eslint-disable-next-line no-restricted-syntax, guard-for-in
 for (const value in myCar2) {
   console.log(myCar2[value]);
 }
 console.log('5---------------------------');
+// eslint-disable-next-line no-restricted-syntax
 for (const x of myCar2.color) {
   console.log(x);
 }
@@ -64,6 +67,7 @@ console.log('8---------------------------');
 
 // try catch
 try {
+  // eslint-disable-next-line no-undef
   notExistedFunction();
 } catch (error) {
   console.error('Some issues', error.message);

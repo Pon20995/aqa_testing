@@ -99,6 +99,7 @@ console.log(genderFromObj1);
 console.log(genderFromObj2);
 
 console.log('11---------------------------');
+// eslint-disable-next-line no-restricted-syntax, guard-for-in
 for (const valueKey in objectValuesPointPlus) {
   //   console.log(valueKey);
   console.log(`${valueKey}: ${objectValuesPointPlus[valueKey]}`);
@@ -108,8 +109,8 @@ console.log('12---------------------------');
 const newObjPlus = Object.create(objectValuesPointPlus);
 newObjPlus.legs = 2;
 
-console.log(objectValuesPointPlus.hasOwnProperty('legs'));
-console.log(newObjPlus.hasOwnProperty('legs'));
+console.log(Object.prototype.hasOwnProperty.call(objectValuesPointPlus, 'legs'));
+console.log(Object.prototype.hasOwnProperty.call(newObjPlus, 'legs'));
 
 const objBasedArrays = [
   { name: 'John', lastName: 'Dow' },

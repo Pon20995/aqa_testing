@@ -11,6 +11,7 @@ fruits[10] = 'Lemon';
 console.log(fruits);
 
 console.log('2---------------------------');
+// eslint-disable-next-line no-array-constructor
 const anotherFruits = new Array('red', 'blue', 'yellow');
 console.log(anotherFruits.length);
 console.log(anotherFruits[anotherFruits.length - 1]); // вивід останнього елемента
@@ -49,6 +50,7 @@ for (let i = 0; i < fruits.length; i++) {
 }
 
 console.log('6---------------------------');
+// eslint-disable-next-line no-restricted-syntax
 for (const fruit of fruits) {
   console.log(fruit);
 }
