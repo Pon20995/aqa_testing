@@ -1,4 +1,6 @@
+// eslint-disable-next-line import/extensions
 import { n } from '../../nfile.js';
+// eslint-disable-next-line import/extensions
 import { myValue } from '../nfile1.js';
 
 console.log(n);

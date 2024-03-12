@@ -1,13 +1,13 @@
-//switch statement
-let ageCustomer = 16;
-let isAdult = 18;
+// switch statement
+const ageCustomer = 16;
+const isAdult = 18;
 
 switch (true) {
   case ageCustomer > isAdult:
     // The code to be executed if the expression is equal to value1
     console.log('1. customer age over 18');
     break;
-  case ageCustomer > isAdult:
+  case ageCustomer > 50:
     // The code to be executed if the expression is equal to value2
     console.log('1. customer age over 50');
     break;

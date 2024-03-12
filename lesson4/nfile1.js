@@ -1,14 +1,15 @@
 import chalk from 'chalk';
+
 export const myValue = 'Text text';
 
 let myNumber2 = 2;
 export function add(a, b) {
-  let myNumber = 10;
+  const myNumber = 10;
   myNumber2 = 20;
   return a + b;
 }
 
-let result = add(2, 2);
+const result = add(2, 2);
 
 console.log(result);
 console.log(chalk.blue(myNumber2));
@@ -24,12 +25,12 @@ console.log(myValue.substring(5, 9));
 // const myValu2 = 'Text2'
 // module.exports = {myValu2}
 
-let result0fDividing = 5 % 2; // 1
+const result0fDividing = 5 % 2; // 1
 
 // ++
 let counter = 1;
 
-let numberOne = counter++;
+const numberOne = counter++;
 console.log(counter);
 // numberOne++;
 // ++numberOne;
@@ -40,11 +41,11 @@ console.log(numberOne);
 // console. log (counter !== counterText)
 // console. log (undefined === null)
 
-let javascriptName = 'Javascript';
-let newVariable = javascriptName + ' ' + myValue;
+const javascriptName = 'Javascript';
+const newVariable = `${javascriptName} ${myValue}`;
 console.log(newVariable);
 
-let newVariableConcat = javascriptName.concat(' ', myValue);
+const newVariableConcat = javascriptName.concat(' ', myValue);
 console.log(newVariableConcat);
 
-let javascriptNameSpaced = ' Javascript   '; // trim() => "Javascript"
+const javascriptNameSpaced = ' Javascript   '; // trim() => "Javascript"

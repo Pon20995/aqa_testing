@@ -34,7 +34,7 @@ clearTimeout(timeoutId2);
 // } else {
 //     reject(reason); // failure
 // } } );
-let myOwnPromise = new Promise(function (resolve, reject) {
+const myOwnPromise = new Promise((resolve, reject) => {
   resolve('result of function based on promise- good');
   reject(new Error('bad result of promise'));
 });
@@ -44,7 +44,7 @@ myOwnPromise.then(
   (error) => console.log(error),
 );
 
-let myOwnPromise2 = new Promise(function (resolve, reject) {
+const myOwnPromise2 = new Promise((resolve, reject) => {
   setTimeout(() => resolve('Good result'), 1000);
 });
 
@@ -53,7 +53,8 @@ myOwnPromise2.then(
   (error) => console.log(error),
 );
 
-let myOwnPromise3 = new Promise(function (resolve, reject) {
+const myOwnPromise3 = new Promise((resolve, reject) => {
+  // eslint-disable-next-line prefer-promise-reject-errors
   setTimeout(() => reject('Errorka'), 1000);
 });
 
@@ -68,8 +69,10 @@ Promise.resolve(200).then((data) => {
   console.log(data);
 });
 
-// Promise.all([myOwnPromise, myOwnPromise2, myOwnPromise3]); //if one from array promise failed - all will be failed
-// Promise.allSettled([myOwnPromise, myOwnPromise2, myOwnPromise3]); //if one from array promise failed - we receive the result of all promises
+// Promise.all([myOwnPromise, myOwnPromise2, myOwnPromise3]); //if one from array promise failed -
+// all will be failed
+// Promise.allSettled([myOwnPromise, myOwnPromise2, myOwnPromise3]); //if one from array promise
+// failed - we receive the result of all promises
 
 async function hello() {
   return 'Hello';
@@ -85,38 +88,43 @@ async function getDataApi() {
 // getDataApi().then(console.log);
 getDataApi(urlFetch).then(console.log);
 
-const response = await fetch('https://api.github.com/users/github');
-const data = await response.json();
-console.log(data);
+async function fetchData() {
+  const response = await fetch('https://api.github.com/users/github');
+  const data = await response.json();
+  console.log(data);
+}
 
-async function postDataApi(url_param) {
-  const post_response = await fetch({
+fetchData();
+
+async function postDataApi(urlParam) {
+  const postResponse = await fetch({
     method: 'POST',
-    url: url_param,
+    url: urlParam,
     body: JSON.stringify({ name: 'Jane Dou' }),
     headers: {
       'Content-type': 'application/json',
       Authorization: 'Bearer 7462957h4ri23y4',
     },
   });
-  const post_r_data = await post_response.json();
-  return post_r_data;
+  const postRData = await postResponse.json();
+  return postRData;
 }
 getDataApi('https://api.github.com/users/github').then(console.log);
 
-async function postDataApi2(url_param) {
+// eslint-disable-next-line consistent-return
+async function postDataApi2(urlParam) {
   try {
-    const post_response = await fetch({
+    const postResponse = await fetch({
       method: 'POST',
-      url: url_param,
+      url: urlParam,
       body: JSON.stringify({ name: 'Jane Dou' }),
       headers: {
         'Content-type': 'application/json',
         Authorization: 'Bearer 7462957h4ri23y4',
       },
     });
-    const post_r_data = await post_response.json();
-    return post_r_data;
+    const postRData = await postResponse.json();
+    return postRData;
   } catch (error) {
     console.log(error);
   }

@@ -1,5 +1,5 @@
 console.log('1---------------------------');
-let object1 = {
+const object1 = {
   name: 'John',
   lastName: 'Dow',
   age: 1000,
@@ -8,7 +8,7 @@ let object1 = {
 console.log(object1);
 
 console.log('2---------------------------');
-let anotherObject1 = object1;
+const anotherObject1 = object1;
 console.log(anotherObject1.age);
 
 anotherObject1.age = 10;
@@ -31,7 +31,7 @@ const object3 = {
 console.log(object3);
 console.log(object3.phone.home);
 console.log(object3.phone['cord phone']);
-console.log(object3['phone']['mobile']);
+console.log(object3.phone.mobile);
 
 console.log('5---------------------------');
 const nameKolo = 'Kolo';
@@ -44,7 +44,7 @@ const object4 = {
 console.log(object4);
 
 console.log('6---------------------------');
-//деструктуризація
+// деструктуризація
 const selectorHeader = 'h1.main.pointer';
 const textInHeader = 'Hello user';
 
@@ -71,14 +71,14 @@ const ageFromObject = selectorForFooter.age;
 console.log(ageFromObject);
 
 console.log('8---------------------------');
-//this
+// this
 const objectValuesPointPlus = {
   name: nameKolo,
   age: age20,
-  sayHi: function () {
+  sayHi() {
     console.log('Hello from method, not function');
   },
-  showName: function () {
+  showName() {
     console.log(`My name is ${this.name}`);
   },
   gender: null,
@@ -99,17 +99,18 @@ console.log(genderFromObj1);
 console.log(genderFromObj2);
 
 console.log('11---------------------------');
+// eslint-disable-next-line no-restricted-syntax, guard-for-in
 for (const valueKey in objectValuesPointPlus) {
   //   console.log(valueKey);
-  console.log(valueKey + ': ' + objectValuesPointPlus[valueKey]);
+  console.log(`${valueKey}: ${objectValuesPointPlus[valueKey]}`);
 }
 
 console.log('12---------------------------');
 const newObjPlus = Object.create(objectValuesPointPlus);
 newObjPlus.legs = 2;
 
-console.log(objectValuesPointPlus.hasOwnProperty('legs'));
-console.log(newObjPlus.hasOwnProperty('legs'));
+console.log(Object.prototype.hasOwnProperty.call(objectValuesPointPlus, 'legs'));
+console.log(Object.prototype.hasOwnProperty.call(newObjPlus, 'legs'));
 
 const objBasedArrays = [
   { name: 'John', lastName: 'Dow' },
@@ -117,8 +118,8 @@ const objBasedArrays = [
   { name: 'John', lastName: 'Dow' },
 ];
 
-objBasedArrays.forEach(function (objBasedArrays) {
-  if (!objBasedArrays.legs) {
+objBasedArrays.forEach((objBasedArrays1) => {
+  if (!objBasedArrays1.legs) {
     console.log('no property');
   }
 });
@@ -126,7 +127,7 @@ objBasedArrays.forEach(function (objBasedArrays) {
 console.log('13---------------------------');
 const keys = Object.keys(objectValuesPointPlus);
 const valuesO = Object.values(objectValuesPointPlus);
-console.log(keys + ':\n' + valuesO);
+console.log(`${keys}:\n${valuesO}`);
 
 console.log('14---------------------------');
 // деструктуризація масивів
@@ -135,28 +136,28 @@ const [firstELement, secondElement, ThirdELement] = elementsArray;
 console.log(firstELement);
 
 console.log('15---------------------------');
-//...  copy of object
+// ...  copy of object
 const copiedSelectors = { ...combinedSelectors };
 copiedSelectors.selectorHeader = 'NNN';
 console.log(copiedSelectors.selectorHeader);
 console.log(combinedSelectors.selectorHeader);
 
 console.log('16---------------------------');
-//assign method
-const copiedSelectors2 = Object.assign({}, combinedSelectors);
+// assign method
+const copiedSelectors2 = { ...combinedSelectors };
 copiedSelectors2.selectorHeader = 'AAA';
 console.log(copiedSelectors2.selectorHeader);
 console.log(combinedSelectors.selectorHeader);
 
 console.log('17---------------------------');
-function clickAndVerifyDataInFooter(copiedSelectors) {
-  console.log('Click on the element ' + copiedSelectors.footerElement);
+function clickAndVerifyDataInFooter(copiedSelectorsnew) {
+  console.log(`Click on the element ${copiedSelectorsnew.footerElement}`);
 }
 
 clickAndVerifyDataInFooter(copiedSelectors);
 
 console.log('18---------------------------');
-//map
+// map
 
 const simpleMap = new Map();
 simpleMap.set('keyNumber1', 'valueNumber1');

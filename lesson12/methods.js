@@ -2,15 +2,16 @@ import dataFromFile from './example.json' with { type: 'json' };
 console.log(dataFromFile);
 
 async function getSingleUserData() {
-  let response = await fetch('https://reqres.in/api/users/2');
-  let data = await response.json();
+  const response = await fetch('https://reqres.in/api/users/2');
+  const data = await response.json();
   console.log(data); // чиста відповідь JSON
   // console.log(response); //багато непотрібного добра
 }
 
+let nonUsed;
 getSingleUserData();
 
-//JSON =>
+// JSON =>
 // JSON.parse
 // JSON.stringify
 
@@ -25,12 +26,12 @@ const dataJSONobject = {
 };
 
 async function createSingleUser() {
-  const post_response = await fetch('https://reqres.in/api/users', {
+  const postResponse = await fetch('https://reqres.in/api/users', {
     method: 'POST',
     body: dataFromFile,
   });
 
-  let statusCode = post_response.status;
+  const statusCode = postResponse.status;
   console.log(statusCode);
 
   //   let data_response = JSON.parse(post_response);
@@ -39,5 +40,5 @@ async function createSingleUser() {
 
 createSingleUser();
 
-let convertJSONinJS = JSON.stringify(dataJSONobject);
+const convertJSONinJS = JSON.stringify(dataJSONobject);
 console.log(convertJSONinJS);

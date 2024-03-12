@@ -16,13 +16,12 @@ const menu = {
   ],
 };
 const order = (dishes, onComplete) => {
-  console.log(`Start cooking order ...`);
+  console.log('Start cooking order ...');
   const orderResult = [];
 
   const getResultData = (dish, index) => {
     orderResult[index] = dish;
-    if (orderResult.filter(Boolean).length === dishes.length)
-      onComplete(orderResult);
+    if (orderResult.filter(Boolean).length === dishes.length) onComplete(orderResult);
   };
 
   const cookFood = ({ name: item, time }, index, onDishComplete) => {

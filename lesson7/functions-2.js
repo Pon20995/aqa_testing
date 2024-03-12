@@ -5,7 +5,7 @@ function sayHi() {
 
 sayHi();
 
-const sayHi2 = function () {
+const sayHi2 = function sayHi2f() {
   console.log('Hi');
 };
 sayHi2();
@@ -30,11 +30,9 @@ const say = (funcParam) => {
 say(sayHi);
 
 console.log('5---------------------------');
-//callback
-const isOdd = (n) => {
-  return n % 2 !== 0;
-};
-let useAnotherFunction = (callback, num) => {
+// callback
+const isOdd = (n) => n % 2 !== 0;
+const useAnotherFunction = (callback, num) => {
   const isNumOdd = callback(num);
   console.log(`The number ${num} is an odd number: ${isNumOdd}`);
 };
@@ -48,7 +46,7 @@ function fetchData(url, callback) {
     .catch((error) => console.log(error));
 }
 
-fetchData('https://jsonplaceholder.typicode.com/todos/1', function (data) {
+fetchData('https://jsonplaceholder.typicode.com/todos/1', (data) => {
   console.log(data);
 });
 
@@ -59,7 +57,7 @@ const myCar = {
   wheels: 4,
   color: 'white',
   sound: 'beep',
-  makeSignal: function () {
+  makeSignal() {
     console.log(`Car make signal ${this.sound}`);
   },
 };
@@ -80,7 +78,7 @@ myCar2.fff();
 console.log('8---------------------------');
 function Person(name) {
   this.name = name;
-  this.greet = function () {
+  this.greet = function greetf() {
     console.log(`Hello ${this.name}`);
   };
 }
@@ -89,14 +87,15 @@ koala.greet();
 
 console.log('9---------------------------');
 // With call(), an object can use a method belonging to another object.
-const greet3 = function () {
+const greet3 = function greet3f() {
   console.log(`Hello, ${this.name}!`);
 };
 const person22 = { name: 'Koala' };
 greet3.call(person22);
 
 console.log('10---------------------------');
-//With the apply() method, you can write a method that can be used on different objects. The apply() method takes arguments as an array.
+// With the apply() method, you can write a method that can be used on different objects.
+// The apply() method takes arguments as an array.
 function greet2(timesOfDay, weather) {
   console.log(`Good ${timesOfDay}, ${this.name}! It's ${weather} today.`);
 }
@@ -115,16 +114,16 @@ const greetPerson = greet1.bind(person33);
 greetPerson(); // Виведе: Hi, I'm Charlie
 
 console.log('12---------------------------');
-//анонімна функція викликається один раз
-(function () {
+// анонімна функція викликається один раз
+(function anon() {
   // function body
-  //open;
-  //login name & pass
-})();
+  // open;
+  // login name & pass
+}());
 
 console.log('13---------------------------');
 function master() {
-  let masterValue = 10;
+  const masterValue = 10;
 
   function slave() {
     console.log(masterValue);
@@ -132,19 +131,18 @@ function master() {
   return slave;
 }
 
-let closureFunc = master();
+const closureFunc = master();
 closureFunc();
 
 console.log('14---------------------------');
-//recurssion
+// recurssion
 function factorial(n) {
   // Базовий випадок: факторіал 0 або 1 = 1
   if (n === 0 || n === 1) {
     return 1;
-  } else {
-    // Рекурсивний випадок: факторіал числа n = п * факторіал (n - 1)
-    return n * factorial(n - 1); //5*4*3*2*1=120
   }
+  // Рекурсивний випадок: факторіал числа n = п * факторіал (n - 1)
+  return n * factorial(n - 1); // 5*4*3*2*1=120
 }
 const factorialRes = factorial(5);
 console.log(factorialRes);

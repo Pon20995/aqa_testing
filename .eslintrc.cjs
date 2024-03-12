@@ -16,10 +16,12 @@ module.exports = {
     },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: 2020,
     sourceType: 'module',
   },
   rules: {
-    'no-console': off,
+    'no-console': 'off',
+    'no-unused-vars': 'off',
+    'no-plusplus': 'off',
   },
 };
