@@ -1,3 +1,4 @@
 node_modules/
 lesson12/
 lesson10/
+cypress.config.js

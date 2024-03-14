@@ -23,5 +23,7 @@ module.exports = {
     'no-console': 'off',
     'no-unused-vars': 'off',
     'no-plusplus': 'off',
+    'no-unused-expressions': 'off',
+    'no-undef': 'off',
   },
 };
