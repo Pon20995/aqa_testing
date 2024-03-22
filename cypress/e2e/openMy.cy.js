@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Guru tests', () => {
   // before(() => {
   //   // happens only once
   // });
