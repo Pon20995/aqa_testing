@@ -4,7 +4,9 @@
   "description": "examples of js code",
   "main": "10.js",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "cy:run:headed": "npx cypress run -b chrome --headed --spec",
+    "cy:run:headless": "npx cypress run -b chrome --headless --spec"
   },
   "husky": {
     "hooks": {

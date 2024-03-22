@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Guru tests advanced', () => {
   //   cy.get('body').then(($body) => {
   //     if ($body.find('selector_for_your_button').length > 0) {
   //       //evaluates as true if button exists at all
