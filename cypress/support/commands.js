@@ -12,7 +12,7 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 Cypress.Commands.add('Login', () => {
-  cy.visit('https://qauto.forstudy.space/panel/garage', {
+  cy.visit('/panel/garage', {
     failOnStatusCode: false,
     auth: {
       username: 'guest',
