@@ -11,6 +11,11 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+
+// Cypress image snapshot
+// import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
+// addMatchImageSnapshotCommand();
+
 Cypress.Commands.add('Login', () => {
   cy.visit('/panel/garage', {
     failOnStatusCode: false,
