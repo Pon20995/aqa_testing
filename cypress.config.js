@@ -1,8 +1,12 @@
 import { defineConfig } from 'cypress';
 import lib from 'cypress-mochawesome-reporter/lib/index.js';
+// import { addMatchImageSnapshotPlugin } from 'cypress-image-snapshot/plugin.js';
 const { beforeRunHook, afterRunHook } = lib;
 export default defineConfig({
   e2e: {
+    // env: {
+    //   gaQautoTestingUrl: 'https://qauto.forstudy.space/',
+    // },
     experimentalStudio: true,
     // baseUrl: 'https://qauto.forstudy.space',
     retries: {
@@ -18,6 +22,7 @@ export default defineConfig({
       saveAllAttempts: false,
     },
     setupNodeEvents(on, config) {
+      // addMatchImageSnapshotPlugin(on);
       // implement node event listeners here
       on('before:run', async (details) => {
         console.log('override before:run');
